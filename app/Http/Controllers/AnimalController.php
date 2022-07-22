@@ -12,7 +12,7 @@ class AnimalController extends Controller
     {
         $animals = Animal::all();
 
-        return view('dashboard', ['animals' => $animals]);
+        return view('entrada', ['animals' => $animals]);
     }
 
     public function create()
@@ -33,7 +33,7 @@ class AnimalController extends Controller
 
         $animal->save();
 
-        return redirect('dashboard');
+        return redirect('entrada');
     }
 
     public function edit($id)
@@ -43,7 +43,7 @@ class AnimalController extends Controller
         $animal = Animal::findOrFail($id);
 
         if ($user->id != $animal->user->id) {
-            return redirect('dashboard');
+            return redirect('entrada');
         }
 
         return view('animals.edit', compact('animal'));
@@ -55,13 +55,13 @@ class AnimalController extends Controller
 
         Animal::findOrFail($request->id)->update($data);
 
-        return redirect('dashboard');
+        return redirect('entrada');
     }
 
     public function destroy($id)
     {
         Animal::findOrFail($id)->delete();
 
-        return redirect('dashboard');
+        return redirect('entrada');
     }
 }

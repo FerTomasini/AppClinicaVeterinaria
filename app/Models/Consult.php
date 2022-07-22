@@ -10,17 +10,15 @@ class Consult extends Model
     use HasFactory;
 
     protected $fillable = [
-        'status',
-        'sintomas',
+        'nomeanimal',
+        'peso',
+        'idade',
+        'user_id',
+        'dataconsulta',
+        'descricao'
     ];
 
-    public function user()
-    {
-        return $this->belongsTo('app\Models\User');
-    }
-
-    public function animal()
-    {
-        return $this->belongsTo('app\Models\Animal');
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 }
