@@ -21,9 +21,9 @@ KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Serviços</a></li>
+          <li><a href="{{route('servicos')}}" class="nav-link px-2 text-white">Serviços</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Exames</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Agendamento de Consultas</a></li>
+          <li><a href="{{route('consultas')}}" class="nav-link px-2 text-white">Agendamento de Consultas</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Farmácia</a></li>
           <li><a href="#" class="nav-link px-2 text-white">Fale Conosco</a></li>
         </ul>
@@ -33,7 +33,7 @@ KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
+          <a a href="{{route('user.login')}}" class="btn btn-outline-light me-2">Login</a>
           <button type="button" class="btn btn-warning">Sign-up</button>
         </div>
       </div>
