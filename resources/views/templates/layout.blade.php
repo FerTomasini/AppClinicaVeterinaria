@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titulo')</title>
-    <link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/boot
-strap.min.css" rel="stylesheet" integrity="sha384-
-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We
-" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color: #66CDAA;">
 <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -20,12 +17,11 @@ KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
           <li><a href="{{route('servicos')}}" class="nav-link px-2 text-white">Serviços</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Exames</a></li>
-          <li><a href="{{route('consultas')}}" class="nav-link px-2 text-white">Agendamento de Consultas</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Farmácia</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Fale Conosco</a></li>
+          <li><a href="{{route('examesvet')}}" class="nav-link px-2 text-white">Exames</a></li>
+          <li><a href="{{route('consultasvet')}}" class="nav-link px-2 text-white">Agendamento de Consultas</a></li>
+          <li><a href="{{route('farmacia.ver')}}" class="nav-link px-2 text-white">Farmácia</a></li>
+          <li><a href="{{route('contatos')}}" class="nav-link px-2 text-white">Fale Conosco</a></li>
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -33,14 +29,12 @@ KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We
         </form>
 
         <div class="text-end">
-          <a a href="{{route('user.login')}}" class="btn btn-outline-light me-2">Login</a>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          <a a href="{{route('user.index')}}" class="btn btn-outline-light me-2">Login</a>
+          <button type="button" class="btn btn-success">Sign-up</button>
         </div>
       </div>
     </div>
   </header>
-
 @yield('corpo')
-
 </body>
 </html>
