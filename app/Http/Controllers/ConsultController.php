@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Animal;
-use App\Models\Consult;
 use Illuminate\Http\Request;
 
 class ConsultController extends Controller
@@ -22,7 +19,7 @@ class ConsultController extends Controller
 
         $user->fill($dados);
         $user->save();
-        return redirect()->route('consultas');
+        return redirect()->route('entrada');
     }
 
     public function agendar(Request $form){
@@ -37,6 +34,6 @@ class ConsultController extends Controller
 
         User::create($dados);
 
-        return redirect()->route('consultas');
+        return redirect()->route('entrada');
     }
 }
