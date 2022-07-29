@@ -13,7 +13,7 @@ class Consult extends Model
         'nomeanimal',
         'peso',
         'idade',
-        'user_id',
+        'user_name',
         'dataconsulta',
         'descricao'
     ];

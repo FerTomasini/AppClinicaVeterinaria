@@ -15,7 +15,7 @@ class UsersController extends Controller
         $email = $form->email;
         $senha = $form->senha;
 
-        $usuario = User::select('id', 'nome', 'email')->where('email', $email)->where('senha', $senha)->get();
+        $usuario = User::select('id', 'name', 'email')->where('email', $email)->where('password', $senha)->get();
         
         // Encontrou alguém?
         if ($usuario->count()) {
