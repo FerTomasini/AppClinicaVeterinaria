@@ -11,15 +11,6 @@
         <p><?php echo e(session('erro')); ?></p>
     <?php endif; ?>
 
-    <hr>
-    <?php if(session('usuario')): ?>
-        Olá <?php echo e(session('usuario.nome')); ?>.
-        <a href="<?php echo e(route('usuario.logout')); ?>">
-            Sair
-        </a>
-    <?php endif; ?>
-    <hr>
-
     <form action="<?php echo e(route('user.login')); ?>" method="post">
         <?php echo csrf_field(); ?>
         <input type="text" name="email">

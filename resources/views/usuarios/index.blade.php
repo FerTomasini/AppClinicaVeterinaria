@@ -11,15 +11,6 @@
         <p>{{ session('erro') }}</p>
     @endif
 
-    <hr>
-    @if(session('usuario'))
-        Olá {{session('usuario.nome')}}.
-        <a href="{{ route('usuario.logout') }}">
-            Sair
-        </a>
-    @endif
-    <hr>
-
     <form action="{{ route('user.login') }}" method="post">
         @csrf
         <input type="text" name="email">

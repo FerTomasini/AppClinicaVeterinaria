@@ -5,6 +5,12 @@
 <?php $__env->startSection('corpo'); ?>
     <h1 style=text-align-last:center>Saúde Animal - 24 Horas</h1>
     <p><h4 style=text-align-last:center>Centro veterinário com atendimento 24 horas. Carinho, zelo e proteção a todo instante para o seu pet.</h4></p>
+    <?php if(session('msg')): ?>
+    <div class="alert alert-success" role="alert">
+      <?php echo e(session('msg')); ?>
+
+    </div>
+    <?php endif; ?>
     <div class="card-columns">
   <div class="card">
     <img class="card-img-top" src="<?php echo e(asset('imagens/gato.jpg')); ?>" alt="gato">

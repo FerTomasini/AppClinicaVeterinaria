@@ -3,41 +3,16 @@
 @section('titulo', 'Farmácia Veterinária')
 
 @section('corpo')
-<form class="needs-validation" novalidate>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Nome</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome" value="Mark" required>
-      <div class="valid-tooltip">
-        Tudo certo!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Sobrenome</label>
-      <input type="text" class="form-control" id="validationTooltip02" placeholder="Sobrenome" value="Otto" required>
-      <div class="valid-tooltip">
-        Tudo certo!
-      </div>
-    </div>
-</div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip03">Email</label>
-      <input type="text" class="form-control" id="validationTooltip03" placeholder="Email" required>
-      <div class="invalid-tooltip">
-        Por favor, informe um email válido.
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip04">Assunto</label>
-      <input type="text" class="form-control" placeholder="Assunto">
-    </div>
-</div>
-    <div class="col-md-10 mb-3">
-      <label for="validationTooltip04">Sua Mensagem</label>
-      <input type="text" class="form-control" placeholder="Sua Mensagem">
-    </div>
-  </div>
-  <div class="col-md-3 mb-3">
-    <button class="btn btn-primary" type="submit">Enviar</button>
-  </div>
-</form>
+<form action="{{ route('gravarmensagem') }}" method="post" enctype="multipart/form-data">
+@csrf
+<form>
+
+        <p><input value="{{ old('nome') }}" type="text" name="nome" placeholder="Nome" value=""></p>
+        <p><input value="{{ old('sobrenome') }}" type="text" name="sobrenome" placeholder="Sobrenome" value=""></p>
+        <p><input value="{{ old('email') }}" type="text" name="email" placeholder="Email" value=""></p>
+        <p><input value="{{ old('assunto') }}" type="text" name="assunto" placeholder="Assunto" value=""></p>
+        <p><textarea name="mensagem" cols="30" rows="10" placeholder="Mensagem">{{ old('mensagem') }}</textarea></p>
+
+        <p><input type="submit" value="Gravar"></p>
+    </form>
 @endsection

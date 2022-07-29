@@ -3,42 +3,17 @@
 <?php $__env->startSection('titulo', 'Farmácia Veterinária'); ?>
 
 <?php $__env->startSection('corpo'); ?>
-<form class="needs-validation" novalidate>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip01">Nome</label>
-      <input type="text" class="form-control" id="validationTooltip01" placeholder="Nome" value="Mark" required>
-      <div class="valid-tooltip">
-        Tudo certo!
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip02">Sobrenome</label>
-      <input type="text" class="form-control" id="validationTooltip02" placeholder="Sobrenome" value="Otto" required>
-      <div class="valid-tooltip">
-        Tudo certo!
-      </div>
-    </div>
-</div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip03">Email</label>
-      <input type="text" class="form-control" id="validationTooltip03" placeholder="Email" required>
-      <div class="invalid-tooltip">
-        Por favor, informe um email válido.
-      </div>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="validationTooltip04">Assunto</label>
-      <input type="text" class="form-control" placeholder="Assunto">
-    </div>
-</div>
-    <div class="col-md-10 mb-3">
-      <label for="validationTooltip04">Sua Mensagem</label>
-      <input type="text" class="form-control" placeholder="Sua Mensagem">
-    </div>
-  </div>
-  <div class="col-md-3 mb-3">
-    <button class="btn btn-primary" type="submit">Enviar</button>
-  </div>
-</form>
+<form action="<?php echo e(route('gravarmensagem')); ?>" method="post" enctype="multipart/form-data">
+<?php echo csrf_field(); ?>
+<form>
+
+        <p><input value="<?php echo e(old('nome')); ?>" type="text" name="nome" placeholder="Nome" value=""></p>
+        <p><input value="<?php echo e(old('sobrenome')); ?>" type="text" name="sobrenome" placeholder="Sobrenome" value=""></p>
+        <p><input value="<?php echo e(old('email')); ?>" type="text" name="email" placeholder="Email" value=""></p>
+        <p><input value="<?php echo e(old('assunto')); ?>" type="text" name="assunto" placeholder="Assunto" value=""></p>
+        <p><textarea name="mensagem" cols="30" rows="10" placeholder="Mensagem"><?php echo e(old('mensagem')); ?></textarea></p>
+
+        <p><input type="submit" value="Gravar"></p>
+    </form>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('templates/layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\user\AppClinica\resources\views/contato.blade.php ENDPATH**/ ?>

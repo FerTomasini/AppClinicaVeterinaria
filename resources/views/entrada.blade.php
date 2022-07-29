@@ -5,6 +5,11 @@
 @section('corpo')
     <h1 style=text-align-last:center>Saúde Animal - 24 Horas</h1>
     <p><h4 style=text-align-last:center>Centro veterinário com atendimento 24 horas. Carinho, zelo e proteção a todo instante para o seu pet.</h4></p>
+    @if (session('msg'))
+    <div class="alert alert-success" role="alert">
+      {{session('msg')}}
+    </div>
+    @endif
     <div class="card-columns">
   <div class="card">
     <img class="card-img-top" src="{{ asset('imagens/gato.jpg')}}" alt="gato">

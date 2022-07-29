@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\AnimalController;
 use App\Http\Controllers\ConsultController;
+use App\Http\Controllers\ContatoController;
 use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('entrada');
-});
+})->name('entrada');
 
 Route::get('/login', [UsersController::class, 'index'])->name('user.index');
 
@@ -35,6 +35,8 @@ Route::get('/farmacia', [MedicamentoController::class, 'ver'])->name('farmacia.v
 
 Route::get('/consultas', [ConsultController::class, 'agendargravar'])->name('consultas.agendargravar');
 
+Route::post('/consultas', [ConsultController::class, 'agendar'])->name('consultas.agendar');
+
 Route::get('/exames', function(){
     return view('exames');
 })->name('examesvet');
@@ -46,3 +48,5 @@ Route::get('/agendaconsulta', function(){
 Route::get('/contato', function(){
     return view('contato');
 })->name('contatos');
+
+Route::post('/contato', [ContatoController::class, 'gravarmensagem'])->name('gravarmensagem');
